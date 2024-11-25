@@ -1,3 +1,4 @@
+/* Estilos generales */
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +12,7 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #f0f0f0;
+    flex-direction: column; /* Aseguramos que los elementos estén en columna */
 }
 
 .container {
@@ -28,14 +30,16 @@ button {
     border-radius: 5px;
 }
 
+/* Ajustes para el tablero de juego */
 .game-board {
     display: grid;
-    grid-template-columns: repeat(5, 100px);
+    grid-template-columns: repeat(5, 100px); /* Por defecto, 5 columnas */
     grid-gap: 10px;
     justify-content: center;
     margin-top: 20px;
 }
 
+/* Estilo de las cartas */
 .card {
     width: 100px;
     height: 100px;
@@ -65,7 +69,56 @@ button {
 .card.flipped .image {
     display: block; /* Mostrar la imagen cuando la carta está volteada */
 }
+
+/* Estadísticas */
 #stats {
     margin-top: 20px;
     font-size: 18px;
+}
+
+/* Media Queries para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+    /* Para móviles de tamaño mediano o pantallas más pequeñas */
+    .game-board {
+        grid-template-columns: repeat(4, 80px); /* Reducir el tamaño de las cartas */
+        grid-gap: 8px; /* Reducir el espacio entre cartas */
+    }
+
+    .card {
+        width: 80px;
+        height: 80px;
+        font-size: 1.5em; /* Reducir el tamaño del texto dentro de las cartas */
+    }
+
+    button {
+        padding: 8px 16px; /* Hacer los botones un poco más pequeños */
+        font-size: 14px; /* Reducir el tamaño de la fuente */
+    }
+
+    #stats {
+        font-size: 16px; /* Reducir el tamaño del texto de las estadísticas */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Para pantallas pequeñas, como teléfonos en modo vertical */
+    .game-board {
+        grid-template-columns: repeat(3, 70px); /* Ajustar a 3 cartas por fila */
+        grid-gap: 6px; /* Reducir el espacio entre las cartas */
+    }
+
+    .card {
+        width: 70px;
+        height: 70px;
+        font-size: 1.2em; /* Reducir aún más el tamaño de las cartas */
+    }
+
+    button {
+        padding: 6px 12px; /* Ajustar el tamaño de los botones */
+        font-size: 12px; /* Hacer el texto del botón más pequeño */
+    }
+
+    #stats {
+        font-size: 14px; /* Hacer el texto de estadísticas aún más pequeño */
+    }
 }
