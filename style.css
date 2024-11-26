@@ -103,7 +103,7 @@ button {
 @media (max-width: 480px) {
     /* Para pantallas pequeñas, como teléfonos en modo vertical */
     .game-board {
-        grid-template-columns: repeat(3, 70px); /* Ajustar a 3 cartas por fila */
+        grid-template-columns: repeat(4, 70px); /* Ajustar a 3 cartas por fila */
         grid-gap: 6px; /* Reducir el espacio entre las cartas */
     }
 
